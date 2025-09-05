@@ -25,5 +25,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npx nx run-many -t test
-    - run: npx nx run-many -t typecheck
+    - run: npx nx run-many --no-cloud -t test
+    - run: npx nx run-many --no-cloud -t typecheck
