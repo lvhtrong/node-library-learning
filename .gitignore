@@ -1,0 +1,8 @@
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
+
+dist/
+out-tsc/
+node_modules/
+.nx/
+.DS_Store
