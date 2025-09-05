@@ -25,5 +25,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+      name: Restore packages
     - run: npx nx run-many --no-cloud -t test
+      name: Run tests
     - run: npx nx run-many --no-cloud -t typecheck
+      name: Run type checks
