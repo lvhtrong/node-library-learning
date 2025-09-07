@@ -1,0 +1,21 @@
+{
+  "name": "testing-react-router",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/testing-react-router/app",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cd apps/testing-react-router && npx firebase deploy",
+            "forwardAllArgs": false
+          }
+        ],
+        "parallel": false
+      }
+    }
+  }
+}
