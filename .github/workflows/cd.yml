@@ -26,7 +26,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
         name: Restore packages
-      - run: npx nx run testing-react-router:build
+      - run: npx nx run testing-react-router:build --no-cloud
         name: Build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         name: Deploy
