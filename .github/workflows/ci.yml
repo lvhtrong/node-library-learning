@@ -26,7 +26,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
       name: Restore packages
-    - run: npx nx run-many --no-cloud -t test
+    - run: npx nx affected -t test
       name: Run tests
-    - run: npx nx run-many --no-cloud -t typecheck
+    - run: npx nx affected -t typecheck
       name: Run type checks
