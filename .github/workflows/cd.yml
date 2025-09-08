@@ -79,7 +79,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         name: Deploy
         with:
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NEXT_TESTING }}"
-          projectId: testing-next-d8161
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_ROUTER_TESTING }}"
+          projectId: testing-react-router-5fbda
           channelId: live
           entryPoint: apps/testing-next
