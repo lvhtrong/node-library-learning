@@ -1,5 +1,6 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite';
+import devtoolsJson from 'vite-plugin-devtools-json';
 import { reactRouter } from '@react-router/dev/vite';
 
 export default defineConfig(() => ({
@@ -13,7 +14,7 @@ export default defineConfig(() => ({
     port: 4200,
     host: 'localhost',
   },
-  plugins: [!process.env.VITEST && reactRouter()],
+  plugins: [!process.env.VITEST && reactRouter(), devtoolsJson()],
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
