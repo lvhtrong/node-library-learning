@@ -10,7 +10,7 @@
       "options": {
         "commands": [
           {
-            "command": "cd apps/testing-next && npx firebase deploy --project testing-next-d8161",
+            "command": "cd apps/testing-next && npx firebase deploy --project testing-react-router-5fbda --only hosting:testing-next",
             "forwardAllArgs": false
           }
         ],
