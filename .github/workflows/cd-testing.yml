@@ -24,7 +24,7 @@ jobs:
         id: detect_changed_apps
         run: |
           echo "Changed apps:"
-          export AFFECTED_PROJECTS=$(npx nx show projects --affected --base origin/main --type app)
+          export AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app)
           echo "changed_apps=$AFFECTED_PROJECTS" >> "$GITHUB_OUTPUT"
 
   deploy-testing-react-router:
