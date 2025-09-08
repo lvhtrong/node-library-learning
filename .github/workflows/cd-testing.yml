@@ -6,6 +6,7 @@ on:
 
 jobs:
   detect-changed-apps:
+    name: Detect Changed Apps
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -23,7 +24,7 @@ jobs:
       - name: Detect changed apps
         id: detect_changed_apps
         run: |
-          echo "Changed apps:"
+          echo "Changed apps:" 
           export AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app)
           echo "changed_apps=$AFFECTED_PROJECTS" >> "$GITHUB_OUTPUT"
 
