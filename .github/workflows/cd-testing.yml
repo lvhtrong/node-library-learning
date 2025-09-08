@@ -31,7 +31,7 @@ jobs:
   deploy-testing-react-router:
     name: 'Deploy testing-react-router'
     needs: detect-changed-apps
-    if: contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-react-router')
+    if: ${{ contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-react-router') }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
