@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 2
+      - run: git log
       - run: npm ci
         name: Restore packages
       - name: Detect changed apps
