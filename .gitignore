@@ -8,3 +8,8 @@ node_modules/
 .DS_Store
 
 .firebase/
+
+# Next.js
+.next
+out
+test-output
