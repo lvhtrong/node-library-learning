@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "testing-next",
     "public": "out",
     "ignore": [
       "firebase.json",
