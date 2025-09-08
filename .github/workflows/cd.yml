@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy apps
 
 on:
   push:
@@ -6,10 +6,33 @@ on:
       - main
 
 jobs:
-  deploy:
-
+  detect-changed-apps:
+    name: Detect Changed Apps
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    outputs:
+      changed_apps: ${{ steps.detect_changed_apps.outputs.changed_apps }}
 
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - run: npm ci
+        name: Restore packages
+      - name: Detect changed apps
+        id: detect_changed_apps
+        run: |
+          export AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app)
+          echo "Changed apps: $AFFECTED_PROJECTS" 
+          echo "changed_apps=$AFFECTED_PROJECTS" >> "$GITHUB_OUTPUT"
+
+  deploy-testing-react-router:
+    name: 'Deploy testing-react-router'
+    needs: detect-changed-apps
+    if: ${{ contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-react-router') }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [22.x]
@@ -32,5 +55,3 @@ jobs:
           projectId: testing-react-router-5fbda
           channelId: live
           entryPoint: apps/testing-react-router
-          # Optionally add Force flag
-          # force: true
