@@ -24,7 +24,7 @@ jobs:
       - name: Detect changed apps
         id: detect_changed_apps
         run: |
-          export AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app)
+          export AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app --sep=,)
           echo "Changed apps: $AFFECTED_PROJECTS" 
           echo "changed_apps=$AFFECTED_PROJECTS" >> "$GITHUB_OUTPUT"
 
