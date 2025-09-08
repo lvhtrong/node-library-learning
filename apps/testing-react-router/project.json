@@ -10,7 +10,7 @@
       "options": {
         "commands": [
           {
-            "command": "cd apps/testing-react-router && npx firebase deploy",
+            "command": "cd apps/testing-react-router && npx firebase deploy --project testing-react-router-8f5e1",
             "forwardAllArgs": false
           }
         ],
