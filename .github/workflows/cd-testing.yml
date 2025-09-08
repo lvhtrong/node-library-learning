@@ -24,8 +24,8 @@ jobs:
       - name: Detect changed apps
         id: detect_changed_apps
         run: |
-          echo "Changed apps:" 
           export AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app)
+          echo "Changed apps: $AFFECTED_PROJECTS" 
           echo "changed_apps=$AFFECTED_PROJECTS" >> "$GITHUB_OUTPUT"
 
   deploy-testing-react-router:
@@ -37,6 +37,7 @@ jobs:
       matrix:
         node-version: [22.x]
     steps:
+      - run: echo "${{needs.detect-changed-apps.outputs.changed_apps}}"
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
