@@ -12,4 +12,3 @@ export function AppNav() {
     </nav>
   );
 }
-
