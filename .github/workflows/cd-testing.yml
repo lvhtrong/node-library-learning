@@ -1,4 +1,4 @@
-name: Deploy
+name: Conditional Deployment Testing
 
 on:
   pull_request:
@@ -24,10 +24,11 @@ jobs:
         id: detect_changed_apps
         run: |
           echo "Changed apps:"
-          AFFECTED_PROJECTS=$(npx nx show projects --affected --base HEAD~1 --type app)
+          export AFFECTED_PROJECTS=$(npx nx show projects --affected --base origin/main --type app)
           echo "changed_apps=$AFFECTED_PROJECTS" >> "$GITHUB_OUTPUT"
 
-  deploy:
+  deploy-testing-react-router:
+    name: 'Deploy testing-react-router'
     needs: detect-changed-apps
     if: contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-react-router')
     runs-on: ubuntu-latest
