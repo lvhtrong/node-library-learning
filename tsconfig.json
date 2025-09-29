@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/testing-next"
+    },
+    {
+      "path": "./packages/ui/web"
     }
   ]
 }
