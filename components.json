@@ -12,11 +12,11 @@
   },
   "iconLibrary": "lucide",
   "aliases": {
-    "components": "@library-testing/ui/web/components",
-    "utils": "@library-testing/ui/web/lib/utils",
-    "ui": "@library-testing/ui/web/components/ui",
-    "lib": "@library-testing/ui/web/lib",
-    "hooks": "@library-testing/ui/web/hooks"
+    "components": "@library-testing/ui/web/src/components",
+    "utils": "@library-testing/ui/web/src/lib/utils",
+    "ui": "@library-testing/ui/web/src/components/ui",
+    "lib": "../../utils",
+    "hooks": "@library-testing/ui/web/src/hooks"
   },
   "registries": {}
 }
