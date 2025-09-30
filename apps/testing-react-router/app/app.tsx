@@ -1,13 +1,11 @@
-import NxWelcome from "./nx-welcome";
+import NxWelcome from './nx-welcome';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="@testing-react-router-nx/testing-react-router"/>
+      <NxWelcome title="@testing-react-router-nx/testing-react-router" />
     </div>
   );
 }
 
 export default App;
-
-
