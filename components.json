@@ -15,7 +15,7 @@
     "components": "@library-testing/ui/web/src/components",
     "utils": "@library-testing/ui/web/src/lib/utils",
     "ui": "@library-testing/ui/web/src/components/ui",
-    "lib": "../../utils",
+    "lib": "@library-testing/ui/web/src/utils",
     "hooks": "@library-testing/ui/web/src/hooks"
   },
   "registries": {}

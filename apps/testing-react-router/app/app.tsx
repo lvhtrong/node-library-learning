@@ -1,11 +1,7 @@
-import NxWelcome from './nx-welcome';
+import { Admin } from '@library-testing/ui/web';
 
 export function App() {
-  return (
-    <div>
-      <NxWelcome title="@testing-react-router-nx/testing-react-router" />
-    </div>
-  );
+  return <Admin></Admin>;
 }
 
 export default App;
