@@ -1,7 +1,7 @@
 import { useFieldValue, useTranslate } from 'ra-core';
 import React, { AnchorHTMLAttributes } from 'react';
 
-import { cn } from '../../utils/utils';
+import { cn } from '@library-testing/utils/web';
 import { FieldProps } from '../../utils/field.type';
 import { genericMemo } from '../../utils/genericMemo';
 

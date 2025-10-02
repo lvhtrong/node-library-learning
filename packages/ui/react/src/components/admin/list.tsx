@@ -17,7 +17,7 @@ import {
 } from 'ra-core';
 import { ReactElement, ReactNode } from 'react';
 import { Link } from 'react-router';
-import { cn } from '../../utils/utils';
+import { cn } from '@library-testing/utils/web';
 import { FilterContext, FilterElementProps } from '../../hooks/filter-context';
 import { CreateButton } from '../../components/admin/create-button';
 import { ExportButton } from '../../components/admin/export-button';

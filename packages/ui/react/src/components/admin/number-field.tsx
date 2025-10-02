@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import { useFieldValue, useTranslate } from "ra-core";
-import { FieldProps } from "../../utils/field.type.ts";
+import { FieldProps } from "../../utils/field.type";
 
 export const NumberField = <
   RecordType extends Record<string, any> = Record<string, any>,

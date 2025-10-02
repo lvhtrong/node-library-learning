@@ -1,4 +1,4 @@
-import { SortPayload, useStore } from "ra-core";
+import { SortPayload, useStore } from 'ra-core';
 
 /**
  * @deprecated Use useSavedQueries from `ra-core` once available.
@@ -43,6 +43,7 @@ export const areValidSavedQueries = (savedQueries: SavedQuery[]) => {
   ) {
     return true;
   }
+  return undefined;
 };
 
 /**
@@ -51,13 +52,13 @@ export const areValidSavedQueries = (savedQueries: SavedQuery[]) => {
 export const isValidSavedQuery = (savedQuery: SavedQuery) => {
   if (
     savedQuery.label &&
-    typeof savedQuery.label === "string" &&
+    typeof savedQuery.label === 'string' &&
     savedQuery.value &&
     typeof Array.isArray(savedQuery.value.displayedFilters) &&
-    typeof savedQuery.value.perPage === "number" &&
-    typeof savedQuery.value.sort?.field === "string" &&
-    typeof savedQuery.value.sort?.order === "string" &&
-    typeof savedQuery.value.filter === "object"
+    typeof savedQuery.value.perPage === 'number' &&
+    typeof savedQuery.value.sort?.field === 'string' &&
+    typeof savedQuery.value.sort?.order === 'string' &&
+    typeof savedQuery.value.filter === 'object'
   ) {
     return true;
   }

@@ -4,7 +4,7 @@ import {
   isValidElement,
   useCallback,
   type ReactNode,
-} from "react";
+} from 'react';
 import {
   DataTableBase,
   DataTableBaseProps,
@@ -29,12 +29,12 @@ import {
   useStore,
   useTranslate,
   useTranslateLabel,
-} from "ra-core";
-import { useNavigate } from "react-router";
-import { ArrowDownAZ, ArrowUpZA } from "lucide-react";
-import get from "lodash/get";
+} from 'ra-core';
+import { useNavigate } from 'react-router';
+import { ArrowDownAZ, ArrowUpZA } from 'lucide-react';
+import get from 'lodash/get';
 import { cn } from '@library-testing/utils/web';
-import { Alert, AlertDescription } from "../../components/ui/alert";
+import { Alert, AlertDescription } from '../../components/ui/alert';
 import {
   Table,
   TableBody,
@@ -42,24 +42,24 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/table";
-import { Button } from "../../components/ui/button";
-import { Checkbox } from "../../components/ui/checkbox";
+} from '../../components/ui/table';
+import { Button } from '../../components/ui/button';
+import { Checkbox } from '../../components/ui/checkbox';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../components/ui/tooltip";
+} from '../../components/ui/tooltip';
 import {
   ColumnsSelector,
   ColumnsSelectorItem,
-} from "../../components/admin/columns-button";
-import { NumberField } from "../../components/admin/number-field";
+} from '../../components/admin/columns-button';
+import { NumberField } from '../../components/admin/number-field';
 import {
   BulkActionsToolbar,
   BulkActionsToolbarChildren,
-} from "../../components/admin/bulk-actions-toolbar";;
+} from '../../components/admin/bulk-actions-toolbar';
 
 const defaultBulkActionButtons = <BulkActionsToolbarChildren />;
 
@@ -89,7 +89,7 @@ export function DataTable<RecordType extends RaRecord = RaRecord>(
       empty={<DataTableEmpty />}
       {...rest}
     >
-      <div className={cn("rounded-md border", className)}>
+      <div className={cn('rounded-md border', className)}>
         <Table>
           <DataTableRenderContext.Provider value="header">
             <DataTableHead>{columns}</DataTableHead>
@@ -197,12 +197,12 @@ const DataTableRow = ({
 
   const record = useRecordContext();
   if (!record) {
-    throw new Error("DataTableRow can only be used within a RecordContext");
+    throw new Error('DataTableRow can only be used within a RecordContext');
   }
 
   const resource = useResourceContext();
   if (!resource) {
-    throw new Error("DataTableRow can only be used within a ResourceContext");
+    throw new Error('DataTableRow can only be used within a ResourceContext');
   }
 
   const navigate = useNavigate();
@@ -219,7 +219,7 @@ const DataTableRow = ({
 
   const handleClick = useCallback(async () => {
     const temporaryLink =
-      typeof rowClick === "function"
+      typeof rowClick === 'function'
         ? rowClick(record.id, resource, record)
         : rowClick;
 
@@ -242,7 +242,7 @@ const DataTableRow = ({
     <TableRow
       key={record.id}
       onClick={handleClick}
-      className={cn(rowClick !== false && "cursor-pointer", className)}
+      className={cn(rowClick !== false && 'cursor-pointer', className)}
     >
       {hasBulkActions ? (
         <TableCell className="flex w-8" onClick={handleToggle}>
@@ -259,7 +259,7 @@ const DataTableRow = ({
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isPromise = (value: any): value is Promise<any> =>
-  value && typeof value.then === "function";
+  value && typeof value.then === 'function';
 
 const DataTableEmpty = () => {
   return (
@@ -283,12 +283,14 @@ export function DataTableColumn<
 >(props: DataTableColumnProps<RecordType>) {
   const renderContext = useDataTableRenderContext();
   switch (renderContext) {
-    case "columnsSelector":
+    case 'columnsSelector':
       return <ColumnsSelectorItem<RecordType> {...props} />;
-    case "header":
+    case 'header':
       return <DataTableHeadCell {...props} />;
-    case "data":
+    case 'data':
       return <DataTableCell {...props} />;
+    default:
+      return null;
   }
 }
 
@@ -335,20 +337,20 @@ function DataTableHeadCell<
   const nextSortOrder =
     sort && sort.field === source
       ? oppositeOrder[sort.order]
-      : sortByOrder ?? "ASC";
+      : sortByOrder ?? 'ASC';
   const fieldLabel = translateLabel({
-    label: typeof label === "string" ? label : undefined,
+    label: typeof label === 'string' ? label : undefined,
     resource,
     source,
   });
-  const sortLabel = translate("ra.sort.sort_by", {
+  const sortLabel = translate('ra.sort.sort_by', {
     field: fieldLabel,
     field_lower_first:
-      typeof fieldLabel === "string"
+      typeof fieldLabel === 'string'
         ? fieldLabel.charAt(0).toLowerCase() + fieldLabel.slice(1)
         : undefined,
     order: translate(`ra.sort.${nextSortOrder}`),
-    _: translate("ra.action.sort"),
+    _: translate('ra.action.sort'),
   });
 
   return (
@@ -364,7 +366,7 @@ function DataTableHeadCell<
                 data-field={source}
                 onClick={handleSort}
               >
-                {headerClassName?.includes("text-right") ? null : (
+                {headerClassName?.includes('text-right') ? null : (
                   <FieldTitle
                     label={label}
                     source={source}
@@ -372,13 +374,13 @@ function DataTableHeadCell<
                   />
                 )}
                 {sort.field === source ? (
-                  sort.order === "ASC" ? (
+                  sort.order === 'ASC' ? (
                     <ArrowDownAZ className="ml-2 h-6 w-6" />
                   ) : (
                     <ArrowUpZA className="ml-2 h-6 w-6" />
                   )
                 ) : null}
-                {headerClassName?.includes("text-right") ? (
+                {headerClassName?.includes('text-right') ? (
                   <FieldTitle
                     label={label}
                     source={source}
@@ -399,9 +401,9 @@ function DataTableHeadCell<
   );
 }
 
-const oppositeOrder: Record<SortPayload["order"], SortPayload["order"]> = {
-  ASC: "DESC",
-  DESC: "ASC",
+const oppositeOrder: Record<SortPayload['order'], SortPayload['order']> = {
+  ASC: 'DESC',
+  DESC: 'ASC',
 };
 
 function DataTableCell<
@@ -424,14 +426,14 @@ function DataTableCell<
   if (isColumnHidden) return null;
   if (!render && !field && !children && !source) {
     throw new Error(
-      "DataTableColumn: Missing at least one of the following props: render, field, children, or source"
+      'DataTableColumn: Missing at least one of the following props: render, field, children, or source'
     );
   }
 
   return (
     <TableCell
       className={cn(
-        "py-1",
+        'py-1',
         className,
         cellClassName,
         record && conditionalClassName?.(record)
@@ -460,7 +462,7 @@ export interface DataTableColumnProps<
   source?: NoInfer<HintedString<ExtractRecordPaths<RecordType>>>;
   label?: React.ReactNode;
   disableSort?: boolean;
-  sortByOrder?: SortPayload["order"];
+  sortByOrder?: SortPayload['order'];
 }
 
 export function DataTableNumberColumn<
@@ -480,8 +482,8 @@ export function DataTableNumberColumn<
       source={source}
       {...rest}
       className={className}
-      headerClassName={cn("text-right", headerClassName)}
-      cellClassName={cn("text-right", cellClassName)}
+      headerClassName={cn('text-right', headerClassName)}
+      cellClassName={cn('text-right', cellClassName)}
     >
       <NumberField source={source} options={options} locales={locales} />
     </DataTableColumn>

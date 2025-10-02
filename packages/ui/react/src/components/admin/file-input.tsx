@@ -28,7 +28,7 @@ import { XCircle } from "lucide-react";
 import { cn } from '@library-testing/utils/web';
 import { FormError, FormField, FormLabel } from "../../components/admin/form";
 import { InputHelperText } from "../../components/admin/input-helper-text";
-import { Button } from "../../components/ui/button.tsx";;
+import { Button } from "../../components/ui/button";
 
 export const FileInput = (props: FileInputProps) => {
   const {

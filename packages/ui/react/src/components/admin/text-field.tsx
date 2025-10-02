@@ -1,9 +1,9 @@
-import { HTMLAttributes } from "react";
-import { useFieldValue, useTranslate } from "ra-core";
-import { FieldProps } from "../../utils/field.type.ts";
+import { HTMLAttributes } from 'react';
+import { useFieldValue, useTranslate } from 'ra-core';
+import { FieldProps } from '../../utils/field.type';
 
 export const TextField = <
-  RecordType extends Record<string, any> = Record<string, any>,
+  RecordType extends Record<string, any> = Record<string, any>
 >({
   defaultValue,
   source,
@@ -21,19 +21,19 @@ export const TextField = <
 
     return (
       <span {...rest}>
-        {typeof empty === "string" ? translate(empty, { _: empty }) : empty}
+        {typeof empty === 'string' ? translate(empty, { _: empty }) : empty}
       </span>
     );
   }
 
   return (
     <span {...rest}>
-      {typeof value !== "string" ? value.toString() : value}
+      {typeof value !== 'string' ? value.toString() : value}
     </span>
   );
 };
 
 export interface TextFieldProps<
-  RecordType extends Record<string, any> = Record<string, any>,
+  RecordType extends Record<string, any> = Record<string, any>
 > extends FieldProps<RecordType>,
     HTMLAttributes<HTMLSpanElement> {}

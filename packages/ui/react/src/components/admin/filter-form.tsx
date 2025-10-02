@@ -25,7 +25,7 @@ import {
   MinusCircle,
   X,
 } from 'lucide-react';
-import { cn } from '../../utils/utils';
+import { cn } from '@library-testing/utils/web';
 import {
   FilterElementProps,
   useFilterContext,
