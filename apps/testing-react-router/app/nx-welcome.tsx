@@ -1,4 +1,4 @@
-import { Button } from '@library-testing/ui/web';
+import { Button } from '@library-testing/ui/react';
 
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *

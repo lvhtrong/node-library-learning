@@ -47,7 +47,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/ui/web"
+      "path": "../../packages/ui/react"
     }
   ]
 }

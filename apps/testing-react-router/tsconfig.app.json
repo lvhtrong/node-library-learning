@@ -54,7 +54,7 @@
   ],
   "references": [
     {
-      "path": "../../packages/ui/web/tsconfig.lib.json"
+      "path": "../../packages/ui/react/tsconfig.lib.json"
     }
   ]
 }

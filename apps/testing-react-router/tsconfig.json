@@ -3,7 +3,7 @@
   "include": [],
   "references": [
     {
-      "path": "../../packages/ui/web"
+      "path": "../../packages/ui/react"
     },
     {
       "path": "./tsconfig.app.json"

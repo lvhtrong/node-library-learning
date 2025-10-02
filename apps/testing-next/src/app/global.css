@@ -1,3 +1,3 @@
-@import '../../../../packages/ui/web/app.css';
+@import '../../../../packages/ui/react/app.css';
 
-@source '../../../../packages/ui/web';
+@source '../../../../packages/ui/react';

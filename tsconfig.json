@@ -10,7 +10,10 @@
       "path": "./apps/testing-next"
     },
     {
-      "path": "./packages/ui/web"
+      "path": "./packages/ui/react"
+    },
+    {
+      "path": "./packages/utils/web"
     }
   ]
 }

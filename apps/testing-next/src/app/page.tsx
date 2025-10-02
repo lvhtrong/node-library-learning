@@ -1,6 +1,6 @@
 'use client';
 
-import { Admin } from '@library-testing/ui/web';
+import { Admin } from '@library-testing/ui/react';
 
 export default function Index() {
   /*
