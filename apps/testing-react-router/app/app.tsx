@@ -1,13 +1,11 @@
-import NxWelcome from "./nx-welcome";
+import { Admin } from '@library-testing/ui/react';
 
 export function App() {
   return (
-    <div>
-      <NxWelcome title="@testing-react-router-nx/testing-react-router"/>
+    <div className="h-screen">
+      <Admin></Admin>;
     </div>
   );
 }
 
 export default App;
-
-

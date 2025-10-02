@@ -16,6 +16,13 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "baseUrl": ".",
+    "paths": {
+      "@library-testing/ui/react": ["packages/ui/react/src/index.ts"],
+      "@library-testing/ui/react/*": ["packages/ui/react/*"],
+      "@library-testing/utils/web": ["packages/utils/web/src/index.ts"],
+      "@library-testing/utils/web/*": ["packages/utils/web/*"]
+    }
   }
 }
