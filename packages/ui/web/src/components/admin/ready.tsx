@@ -3,7 +3,7 @@ import {
   BookOpenText,
   ChevronsLeftRight,
   Github,
-} from "lucide-react";
+} from 'lucide-react';
 
 export const Ready = () => (
   <div className="flex flex-col h-screen">
@@ -11,7 +11,7 @@ export const Ready = () => (
       className="flex-1 flex flex-col text-white text-center justify-center items-center"
       style={{
         background:
-          "linear-gradient(135deg, #00023b 0%, #00023b 50%, #313264 100%)",
+          'linear-gradient(135deg, #00023b 0%, #00023b 50%, #313264 100%)',
       }}
     >
       <ScanFace className="w-32 h-32 mb-4" />
@@ -23,21 +23,33 @@ export const Ready = () => (
         &lt;Admin&gt;&lt;/Admin&gt;
       </div>
     </div>
-    <div className="flex h-[20vh] bg-zinc-100 text-black items-center justify-evenly">
+    <div
+      className="flex h-[20vh] bg-zinc-100 text-black items-center"
+      style={{ justifyContent: 'space-evenly' }}
+    >
       <div className="text-xl">
-        <a href="https://marmelab.com/shadcn-admin-kit/docs">
+        <a
+          className="flex flex-col items-center"
+          href="https://marmelab.com/shadcn-admin-kit/docs"
+        >
           <BookOpenText className="inline mr-4 w-10 h-10" />
           Documentation
         </a>
       </div>
       <div className="text-xl">
-        <a href="http://marmelab.com/shadcn-admin-kit/demo">
+        <a
+          className="flex flex-col items-center"
+          href="http://marmelab.com/shadcn-admin-kit/demo"
+        >
           <ChevronsLeftRight className="inline mr-4 w-10 h-10" />
           Demo
         </a>
       </div>
       <div className="text-xl">
-        <a href="https://github.com/marmelab/shadcn-admin-kit">
+        <a
+          className="flex flex-col items-center"
+          href="https://github.com/marmelab/shadcn-admin-kit"
+        >
           <Github className="inline mr-4 w-10 h-10" />
           GitHub
         </a>

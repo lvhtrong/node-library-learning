@@ -1,7 +1,11 @@
 import { Admin } from '@library-testing/ui/web';
 
 export function App() {
-  return <Admin></Admin>;
+  return (
+    <div className="h-screen">
+      <Admin></Admin>;
+    </div>
+  );
 }
 
 export default App;
