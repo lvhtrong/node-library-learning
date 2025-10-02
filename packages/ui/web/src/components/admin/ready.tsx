@@ -23,16 +23,13 @@ export const Ready = () => (
         &lt;Admin&gt;&lt;/Admin&gt;
       </div>
     </div>
-    <div
-      className="flex h-[20vh] bg-zinc-100 text-black items-center"
-      style={{ justifyContent: 'space-evenly' }}
-    >
+    <div className="flex h-[20vh] bg-zinc-100 text-black items-center justify-evenly">
       <div className="text-xl">
         <a
           className="flex flex-col items-center"
           href="https://marmelab.com/shadcn-admin-kit/docs"
         >
-          <BookOpenText className="inline mr-4 w-10 h-10" />
+          <BookOpenText className="inline w-10 h-10" />
           Documentation
         </a>
       </div>
@@ -41,7 +38,7 @@ export const Ready = () => (
           className="flex flex-col items-center"
           href="http://marmelab.com/shadcn-admin-kit/demo"
         >
-          <ChevronsLeftRight className="inline mr-4 w-10 h-10" />
+          <ChevronsLeftRight className="inline w-10 h-10" />
           Demo
         </a>
       </div>
@@ -50,7 +47,7 @@ export const Ready = () => (
           className="flex flex-col items-center"
           href="https://github.com/marmelab/shadcn-admin-kit"
         >
-          <Github className="inline mr-4 w-10 h-10" />
+          <Github className="inline w-10 h-10" />
           GitHub
         </a>
       </div>
