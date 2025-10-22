@@ -4,5 +4,18 @@
   "sourceRoot": "apps/testing-next-ssr/src",
   "projectType": "application",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cd apps/testing-next-ssr && npx vercel deploy",
+            "forwardAllArgs": false
+          }
+        ],
+        "parallel": false
+      }
+    }
+  }
 }
