@@ -2,7 +2,9 @@
   "name": "@testing-react-router-nx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "npx nx run-many -t prepare"
+  },
   "private": true,
   "devDependencies": {
     "@babel/core": "^7.14.5",
