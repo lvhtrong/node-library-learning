@@ -17,6 +17,9 @@
     },
     {
       "path": "./apps/testing-vue"
+    },
+    {
+      "path": "./apps/testing-nuxt"
     }
   ]
 }
