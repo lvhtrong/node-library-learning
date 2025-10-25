@@ -17,6 +17,12 @@
     },
     {
       "path": "./apps/testing-next-ssr"
+    },
+    {
+      "path": "./apps/testing-vue"
+    },
+    {
+      "path": "./apps/testing-nuxt"
     }
   ]
 }

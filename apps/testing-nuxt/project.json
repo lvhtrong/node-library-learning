@@ -1,0 +1,21 @@
+{
+  "name": "testing-nuxt",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/testing-nuxt/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "prepare": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cd apps/testing-nuxt && npx nuxi prepare",
+            "forwardAllArgs": false
+          }
+        ],
+        "parallel": false
+      }
+    }
+  }
+}
