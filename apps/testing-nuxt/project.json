@@ -16,6 +16,18 @@
         ],
         "parallel": false
       }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cd apps/testing-nuxt && npx vercel deploy --prebuilt",
+            "forwardAllArgs": false
+          }
+        ],
+        "parallel": false
+      }
     }
   }
 }

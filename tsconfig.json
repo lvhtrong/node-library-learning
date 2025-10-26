@@ -16,6 +16,9 @@
       "path": "./packages/utils/web"
     },
     {
+      "path": "./apps/testing-next-ssr"
+    },
+    {
       "path": "./apps/testing-vue"
     },
     {

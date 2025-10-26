@@ -1,0 +1,21 @@
+{
+  "name": "testing-next-ssr",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/testing-next-ssr/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "cd apps/testing-next-ssr && npx vercel deploy",
+            "forwardAllArgs": false
+          }
+        ],
+        "parallel": false
+      }
+    }
+  }
+}
