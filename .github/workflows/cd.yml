@@ -7,7 +7,6 @@ on:
 
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_NUXT_PROJECT_ID }}
 
 jobs:
   detect-changed-apps:
@@ -96,6 +95,8 @@ jobs:
     strategy:
       matrix:
         node-version: [22.x]
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_NUXT_PROJECT_ID }}
 
     steps:
       - uses: actions/checkout@v4
@@ -112,3 +113,30 @@ jobs:
         run: npx nx run testing-nuxt:build
       - name: Deploy Project Artifacts to Vercel
         run: npx vercel apps/testing-nuxt --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --prod
+
+  deploy-vue:
+    name: 'Deploy testing-vue'
+    needs: detect-changed-apps
+    if: ${{ contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-vue') }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_VUE_PROJECT_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+        name: Restore packages
+      - name: Pull Vercel Environment Information
+        run: npx vercel pull --yes --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Build Project Artifacts
+        run: npx nx run testing-vue:build
+      - name: Deploy Project Artifacts to Vercel
+        run: npx vercel apps/testing-vue --prebuilt --token=${{ secrets.VERCEL_TOKEN }} --prod
