@@ -60,33 +60,33 @@ jobs:
           channelId: live
           entryPoint: apps/testing-react-router
 
-  # deploy-next:
-  #   name: 'Deploy testing-next'
-  #   needs: detect-changed-apps
-  #   if: ${{ contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-next') }}
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [22.x]
+  deploy-next:
+    name: 'Deploy testing-next'
+    needs: detect-changed-apps
+    if: ${{ contains(needs.detect-changed-apps.outputs.changed_apps, 'testing-next') }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.x]
 
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: 'npm'
-  #     - run: npm ci
-  #       name: Restore packages
-  #     - run: npx nx run testing-next:build
-  #       name: Build
-  #     - uses: FirebaseExtended/action-hosting-deploy@v0
-  #       name: Deploy
-  #       with:
-  #         firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_ROUTER_TESTING }}"
-  #         projectId: testing-react-router-5fbda
-  #         channelId: live
-  #         entryPoint: apps/testing-next
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+        name: Restore packages
+      - run: npx nx run testing-next:build
+        name: Build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        name: Deploy
+        with:
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_REACT_ROUTER_TESTING }}"
+          projectId: testing-react-router-5fbda
+          channelId: live
+          entryPoint: apps/testing-next
 
   deploy-nuxt:
     name: 'Deploy testing-nuxt'
