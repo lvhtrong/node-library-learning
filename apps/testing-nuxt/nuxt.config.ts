@@ -23,4 +23,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [nxViteTsPaths()],
   },
+  nitro: {
+    preset: 'vercel-edge',
+  }
 });
